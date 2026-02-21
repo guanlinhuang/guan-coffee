@@ -1,0 +1,42 @@
+// 必要
+@import 'bootstrap/scss/functions';
+@import './scss/helpers/variables';
+@import 'bootstrap/scss/mixins';
+
+@import 'bootstrap/scss/bootstrap'; // 載入完整的bootstrap
+//在 all.scss 之中，mixins 必須要最後再載入，避免前面有些變數還未載入卻有使用的狀況，這樣就會導致錯誤
+//所以不能只載入其中一個
+
+// 自定義
+/* 1️⃣ 變數與基礎設定 */
+@import './scss/shared/color';
+@import './scss/shared/app';
+
+/* 2️⃣ 共用元件 */
+@import './scss/shared/btnHover';
+@import './scss/shared/pagePagination';
+@import './scss/shared/isLoading';
+
+/* 3️⃣ Layout */
+@import './scss/user/navbarFront';
+@import './scss/user/footFront';
+@import './scss/user/smallSidebar';
+
+/* 4️⃣ 使用者頁面 */
+@import './scss/user/homeView';
+@import './scss/user/userAboutUs';
+@import './scss/user/userProductsAll';
+@import './scss/user/userProductDetail';
+@import './scss/user/userCart';
+@import './scss/user/shoppingProcess';
+@import './scss/user/userOrder';
+@import './scss/user/userPay';
+@import './scss/user/UserFavorite';
+@import './scss/user/swiper';
+
+/* 5️⃣ 管理後台 */
+@import './scss/admin/admin';
+@import './scss/admin/adminOrder';
+@import './scss/admin/productModal';
+
+// 因為sass套件要求改用@use代替@import，但礙於bootstrap套件仍使用@import，且@import與@use不能混用，故維持使用@import。

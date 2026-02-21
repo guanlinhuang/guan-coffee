@@ -1,0 +1,46 @@
+// 上下箭頭隱藏
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; // 隱藏部件的某些功能
+  margin: 0;
+}
+
+/* Firefox */
+input {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.input-group {
+  width: 150px;
+}
+
+.productsall {
+  border-bottom: 1px solid;
+}
+
+.UserProductDetail .product_img {
+  height: 500px;
+}
+
+.UserProductDetail .product_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.UserProductDetail .swiper_img {
+  overflow: hidden;
+  height: 200px;
+  border-radius: none;
+
+  @include media-breakpoint-up(lg) {
+    height: 250px;
+    border-radius: 16px;
+  }
+}
+
+.UserProductDetail .swiper_img img {
+  width: 100%;
+  height: 100%;
+}

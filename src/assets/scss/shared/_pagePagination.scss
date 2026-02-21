@@ -1,0 +1,45 @@
+// 頁碼
+.hidePrevButton,
+.hideNextButton {
+  &.disabled {
+    opacity: 0; // 不透明度 // 0 -透明 // 1 -不透明
+  }
+}
+
+// & 是省略寫法，原本是.hidePrevButton.disabled, .hideNextButton.disabled
+
+.pagination {
+  --bs-pagination-color: #000;
+  --bs-pagination-bg: transparent;
+  --bs-pagination-border-width: 0;
+  --bs-pagination-border-color: transparent;
+  --bs-pagination-border-radius: 0;
+
+  --bs-pagination-hover-color: #000;
+  --bs-pagination-hover-bg: transparent;
+  --bs-pagination-hover-border-color: transparent;
+
+  --bs-pagination-focus-color: #000;
+  --bs-pagination-focus-bg: transparent;
+  --bs-pagination-focus-box-shadow: none;
+
+  --bs-pagination-active-color: #000;
+  --bs-pagination-active-bg: transparent;
+  --bs-pagination-active-border-color: transparent;
+}
+
+.page_bottom {
+  position: relative;
+
+  &:hover,
+  &.active {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 25%;
+      width: 50%;
+      border-bottom: 1.5px solid #000;
+    }
+  }
+}

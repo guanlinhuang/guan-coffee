@@ -1,0 +1,63 @@
+$screen-height: 100vh;
+$banner-height: 264px;
+.h100 {
+  min-height: calc($screen-height - $banner-height);
+}
+.favoritebanner {
+  height: 264px;
+  background-size: cover;
+  background-position: 60%;
+}
+.favoritebanner-text {
+  color: #ffffff;
+  letter-spacing: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+}
+.bgcolor {
+  background: #2d2b1e;
+  color: #fef2f2;
+}
+.btnShop {
+  color: #2d2b1e;
+}
+.btnShop:hover {
+  color: #838288;
+}
+.productImg {
+  width: 150px;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+}
+@media (max-width: 767px) {
+  .table-layout {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .textover {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+}
+
+.btn_cart {
+  color: $cambrige_blue;
+  border: $cambrige_blue 1.5px solid;
+}
+
+.btn_cart:hover {
+  color: white;
+  background-color: $viridian;
+  border-color: $viridian;
+}
+
+.onSale_favorite {
+  top: 50px;
+  left: 10px;
+  border-radius: 5px;
+}

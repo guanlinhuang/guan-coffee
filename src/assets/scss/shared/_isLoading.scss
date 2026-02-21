@@ -1,0 +1,42 @@
+// https://codepen.io/vineethtrv/pen/NWxZqMM
+// 在scss直接載入全部效果樣式
+// 在Vue僅需改樣式編號
+
+$base: #263238;
+$lite: #8fc0a9;
+$brand: #8fc0a9;
+$size: 60px;
+
+@use 'sass:math';
+
+.loader-18 {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid $lite;
+  border-right: 4px solid transparent;
+  animation: rotation 1s linear infinite;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    border-bottom: 4px solid $brand;
+    border-left: 4px solid transparent;
+  }
+}
+
+/* keyFrames */
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

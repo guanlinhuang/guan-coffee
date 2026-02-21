@@ -1,0 +1,9 @@
+.footer {
+  background-color: $viridian;
+}
+
+.footer a:hover {
+  @include media-breakpoint-up(lg) {
+    color: #000 !important;
+  }
+}

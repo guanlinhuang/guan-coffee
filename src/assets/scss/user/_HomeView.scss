@@ -1,0 +1,64 @@
+.btnEmail {
+  --bs-btn-padding-x: 0;
+  --bs-btn-padding-y: 0;
+  --bs-btn-border-color: 0;
+}
+
+.HomeView {
+  margin-top: 86px;
+}
+
+.onSale {
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
+}
+
+.about_box {
+  position: relative;
+  height: 500px;
+
+  @include media-breakpoint-up(sm) {
+    height: 400px;
+  }
+}
+
+.about_box::before {
+  content: '';
+  background-image: url(https://i.imgur.com/Dws4XMy.jpg);
+  width: 100vw;
+  height: 100vh;
+  top: 0%;
+  left: 0;
+  position: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.about_text {
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include media-breakpoint-up(lg) {
+    width: 800px;
+  }
+}
+
+.about_text_opacity {
+  background-color: $eggshell;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+
+.line {
+  width: 150px;
+  height: 150px;
+  background-image: url(https://i.imgur.com/Bs2hFGM.jpg);
+  background-size: cover;
+}
+
+.form-control {
+  border: $viridian solid 1px;
+}

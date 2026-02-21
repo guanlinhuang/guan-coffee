@@ -1,0 +1,19 @@
+.userOrder {
+  // 考量到不同頁面可能不同排版，故未與 UserPay、UserCart共用
+  padding-top: 30px;
+  padding-bottom: 150px;
+  font-size: 13px;
+  @include media-breakpoint-up(lg) {
+    font-size: 16px;
+  }
+}
+
+// 與 UserPay、UserCart共用
+// .productName {
+//     border-bottom: 1px solid
+// }
+
+// .productName:hover {
+//     cursor: pointer;
+//     color: $cambrige_blue !important;
+// }
