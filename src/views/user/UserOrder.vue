@@ -395,7 +395,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted,onUnmounted } from 'vue'
 import router from '@/router'
 
 import { useCartStore } from '@/stores/user/useCartStore'
@@ -421,6 +421,10 @@ function isPhoneNumber(value) {
 function BackToPage() {
   router.go(-1)
 }
+
+onUnmounted(() => {
+  orderStore.resetForm()
+})
 
 onMounted(() => {
   cartStore.getCart()

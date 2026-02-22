@@ -2,6 +2,8 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
 import router from '@/router'
+import { useCartStore } from '@/stores/user/useCartStore'
+const cartStore = useCartStore()
 
 export const useProductStore = defineStore('product', () => {
   const products = ref([])
@@ -31,6 +33,7 @@ export const useProductStore = defineStore('product', () => {
       if (res.data.success) {
         productDetail.value = res.data.product
         productDetail.value.imagesUrl.push(res.data.product.imageUrl)
+        cartStore.productsQty = 1
       }
     } catch (err) {
       console.error('連線錯誤，請再試一次', err)

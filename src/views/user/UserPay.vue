@@ -232,6 +232,7 @@ import { useOrderStore } from '@/stores/user/useOrderStore'
 import { usePayStore } from '@/stores/user/usePayStore'
 import { useProductStore } from '@/stores/user/useProductStore'
 import { useRoute } from 'vue-router'
+import { toast } from 'vue3-toastify'
 
 const orderStore = useOrderStore()
 const payStore = usePayStore()
@@ -249,6 +250,10 @@ function getProductPage(id) {
 
 onMounted(() => {
   orderStore.getOrder(orderId)
+  if (history.state?.fromOrder) {
+    toast.success('訂單建立成功 !')
+    history.replaceState({ ...history.state, fromOrder: false }, '')
+  }
 })
 </script>
 

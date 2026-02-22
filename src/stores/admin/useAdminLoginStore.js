@@ -30,8 +30,30 @@ export const useAdminLoginStore = defineStore('adminLogin', () => {
       console.error('連線錯誤，請再試一次', err)
     }
   }
+
+  async function logout() {
+    const url = `${import.meta.env.VITE_APP_API}logout`
+    try {
+      const res = await axios.post(url)
+      if (res.data.success) {
+        router.push('/login')
+      }
+    } catch (err) {
+      console.error('連線錯誤，請再試一次', err)
+    }
+  }
+
+  function resetForm() {
+    user.value = {
+      username: '',
+      password: '',
+    }
+  }
+
   return {
     user,
     signIn,
+    logout,
+    resetForm,
   }
 })

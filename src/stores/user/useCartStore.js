@@ -36,6 +36,7 @@ export const useCartStore = defineStore('cart', () => {
       await axios.post(url, { data: cart })
       getCart()
       toast.success(`已將「 ${title} 」加入購物車成功 !`)
+      productsQty.value = 1
       if (cartPage) {
         router.push('/cart')
       }

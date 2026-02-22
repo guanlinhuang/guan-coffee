@@ -14,7 +14,7 @@
               :class="{ 'is-invalid': errors['email'] }"
               placeholder="請輸入 Email"
               rules="email|required"
-              v-model="user.username"
+              v-model="adminLoginStore.user.username"
             ></v-field>
             <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
           </div>
@@ -28,7 +28,7 @@
               :class="{ 'is-invalid': errors['password'] }"
               placeholder="請輸入 Password"
               rules="required"
-              v-model="user.password"
+              v-model="adminLoginStore.user.password"
             ></v-field>
             <ErrorMessage name="password" class="invalid-feedback"></ErrorMessage>
           </div>
@@ -47,12 +47,15 @@
 </template>
 
 <script setup>
+import { onUnmounted } from 'vue'
 import { useAdminLoginStore } from '@/stores/admin/useAdminLoginStore'
-import { storeToRefs } from 'pinia'
 const adminLoginStore = useAdminLoginStore()
-const { user } = storeToRefs(adminLoginStore)
 
 async function signIn() {
   await adminLoginStore.signIn()
 }
+
+onUnmounted(() => {
+  adminLoginStore.resetForm()
+})
 </script>

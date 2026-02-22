@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
-import { toast } from 'vue3-toastify'
 import router from '@/router'
 import { useCartStore } from '@/stores/user/useCartStore'
 const cartStore = useCartStore()
@@ -33,9 +32,8 @@ export const useOrderStore = defineStore('order', () => {
       const res = await axios.post(url, { data: orderForm })
       if (res.data.success) {
         const id = res.data.orderId
-        router.push(`/pay/${id}`)
-        toast.success('訂單建立成功 !')
         cartStore.getCart()
+        router.push({ path: `/pay/${id}`, state: { fromOrder: true } })
       }
     } catch (err) {
       console.error('連線錯誤，請再試一次', err)
@@ -69,6 +67,18 @@ export const useOrderStore = defineStore('order', () => {
     }
   }
 
+  function resetForm() {
+    form.value = {
+      user: {
+        name: '',
+        email: '',
+        tel: '',
+        address: '',
+      },
+      message: '',
+    }
+  }
+
   function searchOrder() {
     isLoading.value = true
     searchState.value = true
@@ -99,6 +109,7 @@ export const useOrderStore = defineStore('order', () => {
     createOrder,
     getOrderAll,
     getOrder,
+    resetForm,
     searchOrder,
     payOrder,
   }

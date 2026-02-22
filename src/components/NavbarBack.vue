@@ -95,18 +95,13 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
-import axios from 'axios'
 import { useOffcanvas } from '@/composables/offcanvas'
+import { useAdminLoginStore } from'@/stores/admin/useAdminLoginStore'
 
-const router = useRouter()
+const adminLoginStore = useAdminLoginStore()
 
 const logout = async () => {
-  const api = `${import.meta.env.VITE_APP_API}logout`
-  const res = await axios.post(api)
-  if (res.data.success) {
-    router.push('/login')
-  }
+  adminLoginStore.logout()
 }
 const { closeOffcanvas } = useOffcanvas()
 </script>
