@@ -11,4 +11,4 @@
 ## 專案重構
 將原有 Options API 遷移至 Composition API，並導入 Pinia 進行狀態管理，提升程式碼可讀性與可維護性。
 
-[Options API 版本 GitHub Repo](https://github.com/guanlinhuang/vue3_final_challenge) | [Demo](https://guanlinhuang.github.io/vue3_final_challenge/#/)
+Options API 版本：[GitHub Repo](https://github.com/guanlinhuang/vue3_final_challenge) | [Demo](https://guanlinhuang.github.io/vue3_final_challenge/#/)
