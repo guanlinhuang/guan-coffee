@@ -1,5 +1,6 @@
 ## 專案簡介
 模擬真實購物流程與使用者互動體驗，打造小型電商平台。
+[Demo](https://guanlinhuang.github.io/guan-coffee/#/)
 
 ## 技術應用
 - Vue 3 + Vite + Composition API + Pinia
